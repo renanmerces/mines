@@ -1,17 +1,20 @@
 import React from 'react'
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native'
+import {View, Text, StyleSheet, TouchableOpacity, Button} from 'react-native'
 import Flag from './Flag'
 
 export default props =>{
     return ( <View style={styles.container}>
         <View style={styles.menu}>
-            <TouchableOpacity onPress={props.onFlagPress}>
+            <Button onPress={props.onFlagPress} title='Selecionar nível'></Button>
+            {/* <TouchableOpacity onPress={props.onFlagPress}>
                 <Flag bigger style={styles.flag}></Flag>
-            </TouchableOpacity>                   
+            </TouchableOpacity>                    */}
+            <Flag bigger style={styles.flag}></Flag>
             <Text style={styles.flagText}> = {props.flagsLeft}</Text>
         </View>
         
-        <TouchableOpacity onPress={props.onNewGame}><Text>Novo Jogo</Text></TouchableOpacity>
+        {/* <TouchableOpacity><Text>Novo jogo</Text></TouchableOpacity> */}
+        <Button title='Novo Jogo' onPress={props.onNewGame}></Button>
     </View>
     )
 }
